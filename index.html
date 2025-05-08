@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PaleOS | Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root {
+      --bg: #121212;
+      --card: #1f1f1f;
+      --accent: #00bfff;
+      --text: #fff;
+      --subtext: #bbb;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #1a1a1a;
+      padding: 20px 40px;
+      text-align: center;
+      border-bottom: 2px solid var(--accent);
+    }
+
+    header h1 {
+      color: var(--accent);
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+
+    nav a {
+      margin: 0 15px;
+      color: var(--subtext);
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    section h2 {
+      color: var(--accent);
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .features {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .feature {
+      background-color: var(--card);
+      padding: 25px;
+      border-radius: 12px;
+      width: 280px;
+      transition: 0.3s ease;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    }
+
+    .feature:hover {
+      transform: scale(1.05);
+      background-color: #292929;
+    }
+
+    .feature h3 {
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .feature p {
+      color: var(--subtext);
+      font-size: 0.95rem;
+    }
+
+    .about {
+      margin-top: 50px;
+    }
+
+    footer {
+      background-color: #1a1a1a;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      border-top: 2px solid var(--accent);
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #fff;
+    }
+
+    /* Scroll animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      .features {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>PaleOS</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+    </nav>
+  </header>
+
+  <section class="reveal">
+    <h2>Welcome to PaleOS</h2>
+    <p>Your ultimate platform for powerful tools and code research.</p>
+
+    <div class="features">
+      <div class="feature reveal">
+        <h3>Discord Bot</h3>
+        <p>Bot made by PaleOS that has nuker, spamDM, and coming soon token grabber.</p>
+      </div>
+      <div class="feature reveal">
+        <h3>Multitools</h3>
+        <p>Files made by PaleOS that launch DDoS attacks, grab IPs, and coming soon remote-control.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about reveal">
+    <h2>About PaleOS</h2>
+    <p>PaleOS is meant for people to research code and learn more about it.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 PaleOS. All rights reserved.</p>
+    <p>
+      Follow us on
+      <a href="https://x.com/pale_OS" target="_blank">Twitter</a> |
+      <a href="https://discord.gg/9GVhPJbYuW" target="_blank">Discord</a>
+    </p>
+  </footer>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    window.addEventListener('scroll', () => {
+      for (let i = 0; i < reveals.length; i++) {
+        const windowHeight = window.innerHeight;
+        const revealTop = reveals[i].getBoundingClientRect().top;
+        if (revealTop < windowHeight - 100) {
+          reveals[i].classList.add('active');
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
